@@ -270,6 +270,7 @@ public class JavaSqlCommunication {
                 System.out.println("SQLState: " + ex.getSQLState());
                 System.out.println("VendorError: " + ex.getErrorCode());
             }
+            conn.close();
         }catch (SQLException ex){
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -339,6 +340,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+" TEXT");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -381,6 +383,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+" INTEGER");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -423,6 +426,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+" BOOLEAN");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -464,6 +468,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+" FLOAT");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -505,6 +510,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+" REAL");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -545,6 +551,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+"  BLOB");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -587,6 +594,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+"  DATE");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -629,6 +637,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+"  DATETIME");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -671,6 +680,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+"  BLOB");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -713,6 +723,7 @@ public class JavaSqlCommunication {
             PreparedStatement create = conn.prepareStatement("ALTER TABLE " +tablename + " ADD "+columnname+"  JSON");
             create.executeUpdate();
             create.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -776,6 +787,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -826,6 +838,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -874,6 +887,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+bool+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -922,6 +936,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -970,6 +985,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1019,6 +1035,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1067,6 +1084,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1117,6 +1135,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1165,6 +1184,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1255,6 +1275,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +column1name+ ") " + "VALUES" +"("+var1+")");
             posted.executeUpdate();
             posted.close();
+            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1306,7 +1327,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1344,7 +1365,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1382,7 +1403,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1420,7 +1441,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + input_bool  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1458,7 +1479,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1496,7 +1517,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1535,7 +1556,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1573,7 +1594,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1611,7 +1632,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1649,7 +1670,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
-
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1688,6 +1709,7 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
+            con.close()
 
         }catch (SQLException ex) {
 
@@ -1756,7 +1778,9 @@ public class JavaSqlCommunication {
             temp = posted.executeQuery();
             temp.next();
             text =temp.getString(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1810,7 +1834,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             integer = temp.getInt(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1864,7 +1890,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             bool = temp.getBoolean(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1918,7 +1946,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             aFloat =temp.getFloat(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1972,7 +2002,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             real =temp.getDouble(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2028,7 +2060,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             image =temp.getString(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2082,7 +2116,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             date =temp.getString(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2136,7 +2172,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             datetime =temp.getString(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2189,7 +2227,9 @@ public class JavaSqlCommunication {
             ResultSet temp = posted.executeQuery();
             temp.next();
             blob =temp.getString(1);
+            temp.close();
             posted.close();
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2231,6 +2271,7 @@ public class JavaSqlCommunication {
 
             json =temp.get(1);
             posted.close();
+            conn.close()
 
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
@@ -2302,6 +2343,7 @@ public class JavaSqlCommunication {
             temp.next();
             text.append(temp.getString(1));
             get.close();
+            temp.close();
             text.append(", " + input_value);
 
             // part 2 --> update the var/box
@@ -2309,6 +2351,8 @@ public class JavaSqlCommunication {
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
             posted.executeUpdate();
             posted.close();
+            
+            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
