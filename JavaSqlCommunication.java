@@ -143,7 +143,7 @@ public class JavaSqlCommunication {
      * getConnection is a function that obtains a connection to the database requested and returns that as a Connection object
      * @return Returns the Connection object with a connection to the database specified in the respective JavaSqlCommunication Instance
      */
-    public Connection getConnection() {
+    public Connection getConnection() throws Exception {
         return getConnection(this.databaseName+"");
     }
 
