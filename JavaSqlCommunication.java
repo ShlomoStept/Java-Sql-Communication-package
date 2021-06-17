@@ -2310,75 +2310,8 @@ public class JavaSqlCommunication {
     //  ::   MAIN   ::
     //---------------------------------------------------------------------------------------------------------------------
     public static void main(String[] args) throws Exception {
-        JavaSqlCommunication jsc = new JavaSqlCommunication("jdbc:mysql://127.0.0.1:3306", "root", "DailyArqlearn1ng4t7!0", "ARQ");
-        System.out.println(jsc);
 
-        /*//jsc.createTable("test4");
-         //Test 1 --> all the getConnection functions
-        jsc.getConnection("arq");
-        //jsc.getConnection("arq" );
-        //jsc.getConnection("test2");
-
-        //Test  2--> all the create functions
-        jsc.createTable("test3");
-        jsc.createTextColumn( "tex", "test3");
-        jsc.createIntColumn("ints" ,"test3");
-        jsc.createBooleanColumn("boolea","test3" );
-        jsc.createFloatColumn("floa","test3" );
-        jsc.createRealColumn("rea","test3" );
-        jsc.createImageColumn("imag","test3" );
-        jsc.createDateColumn("dat","test3" );
-        jsc.createDateTimeColumn("datetim","test3" );
-        jsc.createBlobColumn("blo","test3" );
-        jsc.createJSONColumn("jso","test3" );*/
-
-        //test 3 : inserts
-        jsc.insertInt("0","ints" ,"test3");
-        jsc.insertText( "Temp","tex", "test3");
-        jsc.insertBoolean(false,"boolea","test3" );
-        jsc.insertFloat("00.00","floa","test3" );
-        jsc.insertReal("00.00","rea","test3" );
-        jsc.insertImage("Temp","imag","test3" );
-        jsc.insertDate("2020-10-12","dat","test3" );
-        jsc.insertDateTime("2020-10-12 01:12:12","datetim","test3" );
-        jsc.insertBlob("Temp","blo","test3" );
-        //jsc.insertJSON("Temp","jso","test1" );
-
-       /* // test 4: update
-        //jsc.updateText("update works", "tex", "test1", "i=1");
-        jsc.updateText( "works","tex", "test1", "id=1");
-        jsc.updateInt("1","ints" ,"test1", "id=1");
-        jsc.updateBoolean(true,"boolea","test1" , "id=1");
-        jsc.updateFloat("100.00","floa","test1" , "id=1");
-        jsc.updateReal("100.00","rea","test1" , "id=1");
-        jsc.updateImage("works","imag","test1" , "id=1");
-        jsc.updateDate("2021-10-12","dat","test1" , "id=1");
-        jsc.updateDateTime("2021-10-12 01:12:12","datetim","test1" , "id=1");
-        jsc.updateBlob("works","blo","test1", "id=1");
-        //jsc.updateJSON("works","jso","test1", "id=1" );*/
-
-        // test 5: selects
-        /*System.out.println(jsc.selectText("tex", "id=1", "test1"));
-        System.out.println(jsc.selectInt("ints", "id=1", "test1"));
-        System.out.println(jsc.selectBoolean("boolea", "id=1", "test1"));
-        System.out.println(jsc.selectFloat("floa", "id=1", "test1"));
-        System.out.println(jsc.selectReal("rea", "id=1", "test1"));
-        System.out.println(jsc.selectImage("imag", "id=1", "test1"));
-        System.out.println(jsc.selectDate("dat", "id=1", "test1"));
-        System.out.println(jsc.selectDateTime("datetim", "id=1", "test1"));
-        System.out.println(jsc.selectBlob("blo", "id=1", "test1"));*/
-        //System.out.println(jsc.selectJSON("jso", "id=1", "test1"));
-
-
-        //jsc.updateText(" i messed up "," tex ", "test2 ", " id = 1");
-
-        jsc.addText("but add works", "tex", "id = 1", "test2");
     }
-    /*public static void run (String[] args) throws Exception {
-        JavaSqlCommunication jsc = new JavaSqlCommunication("127.0.0.1:3306", "root", "DailyArqlearn1ng3!0", "arq");
-        System.out.println(jsc);
-        jsc.getConnection();
-    }*/
 
 
 
