@@ -23,8 +23,8 @@ import static java.util.Calendar.DATE;
 public class JavaSqlCommunication {
 
     //---------------------------------------------------------------------------------------------------------------------
-    // 0 -> Data Fields:
-    //---------------------------------------------------------------------------------------------------------------------
+            // 0 -> Data Fields:
+        //---------------------------------------------------------------------------------------------------------------------
     private String url; // url of database
     private String userName; // username to database
     private String password; // password to database
@@ -33,10 +33,11 @@ public class JavaSqlCommunication {
     // to do :: --> :: private Boolean create = false; // is there a table currently in the database
 
     //---------------------------------------------------------------------------------------------------------------------
-    // 1 -> Constructors: JavaSqlCommunication
-    //---------------------------------------------------------------------------------------------------------------------
+            // 1 -> Constructors: JavaSqlCommunication
+        //---------------------------------------------------------------------------------------------------------------------
 
-    //  --> 1.1 JavaSqlCommunication
+
+        //  --> 1.1 JavaSqlCommunication
     //-------------------------------------------------------------------------------------
     /**
      * JavaSqlCommunication is a Constructor that instantiates a new instance of the JavaSqlCommunication class
@@ -70,8 +71,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 1.2 JavaSqlCommunication
-    //-------------------------------------------------------------------------------------
+            //  --> 1.2 JavaSqlCommunication
+        //-------------------------------------------------------------------------------------
     /**
      * JavaSqlCommunication is a Constructor that instantiates a new instance of the JavaSqlCommunication class
      * @param url The url to the database.
@@ -103,8 +104,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 1.3. toString
-    //-------------------------------------------------------------------------------------
+            //  --> 1.3. toString
+        //-------------------------------------------------------------------------------------
     /**
      * toString is a To string method that returns a String with all the vales for the data-fields in the JavaSqlCommunication package/class
      */
@@ -122,7 +123,7 @@ public class JavaSqlCommunication {
 
 
     //---------------------------------------------------------------------------------------------------------------------
-    // End ----> Code for Constructors  <----- End.
+        // End ----> Code for Constructors  <----- End.
     //---------------------------------------------------------------------------------------------------------------------
 
 
@@ -132,10 +133,10 @@ public class JavaSqlCommunication {
 
 
     //---------------------------------------------------------------------------------------------------------------------
-    // Methods: Part 1 : JavaSqlCommunication  --> Connection <-- operations
+        // Methods: Part 1 : JavaSqlCommunication  --> Connection <-- operations
     //---------------------------------------------------------------------------------------------------------------------
 
-    //  --> 1.1 getConnection
+        //  --> 1.1 getConnection
     //-------------------------------------------------------------------------------------
     /**
      * getConnection is a function that obtains a connection to the database requested and returns that as a Connection object
@@ -146,8 +147,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 1.2 getConnection
-    //-------------------------------------------------------------------------------------
+            //  --> 1.2 getConnection
+        //-------------------------------------------------------------------------------------
     /**
      * getConnection is a function that obtains a connection to the database requested and returns that as a Connection object
      * @return Returns the Connection object with a connection to the database specified in the accompanied JavaSqlCommunication Instance
@@ -159,8 +160,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 1.3 getConnection
-    //-------------------------------------------------------------------------------------
+            //  --> 1.3 getConnection
+        //-------------------------------------------------------------------------------------
 
     /**
      * getConnection is a function that obtains a connection to the database requested and returns that as a Connection object
@@ -197,7 +198,7 @@ public class JavaSqlCommunication {
 
 
     //---------------------------------------------------------------------------------------------------------------------
-    // End ----> Code for getConnection  <----- End.
+        // End ----> Code for getConnection  <----- End.
     //---------------------------------------------------------------------------------------------------------------------
 
 
@@ -207,10 +208,10 @@ public class JavaSqlCommunication {
 
 
     //---------------------------------------------------------------------------------------------------------------------
-    // Methods: Part 2 : JavaSqlCommunication  --> Create <-- operations
+        // Methods: Part 2 : JavaSqlCommunication  --> Create <-- operations
     //---------------------------------------------------------------------------------------------------------------------
 
-    //  --> 2.1 createTable
+        //  --> 2.1 createTable
     //-------------------------------------------------------------------------------------
     /**
      * createTable is a void function that creates a new table with the given tablename in the database specified when instantiating the respective instance of JavaSqlCommunication
@@ -241,8 +242,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.2 createTable
-    //-------------------------------------------------------------------------------------
+            //  --> 2.2 createTable
+        //-------------------------------------------------------------------------------------
     /**
      * createTable is a void function that creates a new table with the given tablename in the database specified by current JavaSqlCommunication instance
      * --> this method allows the user to specify 1 columnname and its associated datatype, when creating the neww table
@@ -268,9 +269,10 @@ public class JavaSqlCommunication {
         }
     }*/
 
+
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.3.1 createTextColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.3.1 createTextColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createTextColumn is a function that creates a new Text column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -280,8 +282,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.3.2 createTextColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.3.2 createTextColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createTextColumn is a function that creates a new Text column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -309,8 +311,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.4.1 createIntColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.4.1 createIntColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createIntColumn is a function that creates a new Integer column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -320,8 +322,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.4.2 createIntColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.4.2 createIntColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createIntColumn is a function that creates a new Integer column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -351,8 +353,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.5.1 createBooleanColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.5.1 createBooleanColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createBooleanColumn is a function that creates a new Boolean column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -362,8 +364,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.5.2 createBooleanColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.5.2 createBooleanColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createBooleanColumn is a function that creates a new Boolean column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -391,8 +393,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.6.1 createFloatColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.6.1 createFloatColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createFloatColumn is a function that creates a new Float column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -402,8 +404,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.6.2 createFloatColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.6.2 createFloatColumn
+        //-------------------------------------------------------------------------------------
     /**
      * ccreateFloatColumn is a function that creates a new Float column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -432,8 +434,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.7.1 createRealColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.7.1 createRealColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createRealColumn is a function that creates a new Real column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -443,8 +445,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.7.2 createRealColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.7.2 createRealColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createRealColumn is a function that creates a new Real column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -471,8 +473,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.8.1 createImageColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.8.1 createImageColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createImageColumn is a function that creates a new Image column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -482,8 +484,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.8.2 createImageColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.8.2 createImageColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createImageColumn is a function that creates a new Image column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -513,8 +515,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.9.1 createDateColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.9.1 createDateColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createDateColumn is a function that creates a new Date column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -524,8 +526,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.9.2 createDateColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.9.2 createDateColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createDateColumn is a function that creates a new Date column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -554,8 +556,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.10.1 createDateTimeColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.10.1 createDateTimeColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createDateTimeColumn is a function that creates a new DateTime column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -565,8 +567,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.10.2 createDateTimeColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.10.2 createDateTimeColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createDateTimeColumn is a function that creates a new DateTime column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -595,8 +597,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.11.1 createBlobColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.11.1 createBlobColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createBlobColumn is a function that creates a new Blob column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -606,8 +608,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.11.2 createBlobColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.11.2 createBlobColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createBlobColumn is a function that creates a new Blob column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -636,8 +638,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.12.1 createJSONColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.12.1 createJSONColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createJSONColumn is a function that creates a new JSON column in the database, and specific table specified by current JavaSqlCommunication instance
      * @param columnname The Column-name for the column being created
@@ -647,8 +649,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 2.12.2 createJSONColumn
-    //-------------------------------------------------------------------------------------
+            //  --> 2.12.2 createJSONColumn
+        //-------------------------------------------------------------------------------------
     /**
      * createJSONColumn is a function that creates a new JSON column in the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the new column should be created in
@@ -702,7 +704,7 @@ public class JavaSqlCommunication {
 
 
 
-    //  --> 3.1.1 insertText
+        //  --> 3.1.1 insertText
     //-------------------------------------------------------------------------------------
     /**
      * insertText is a function that inserts the specified text into the specified column
@@ -716,8 +718,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.1.2 insertText
-    //-------------------------------------------------------------------------------------
+            //  --> 3.1.2 insertText
+        //-------------------------------------------------------------------------------------
     /**
      * insertText is a function that inserts the specified text into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -753,8 +755,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.2.1 insertInt
-    //-------------------------------------------------------------------------------------
+            //  --> 3.2.1 insertInt
+        //-------------------------------------------------------------------------------------
     /**
      * insertInt is a function that inserts the specified Integer value into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -767,8 +769,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.2.2 insertInt
-    //-------------------------------------------------------------------------------------
+            //  --> 3.2.2 insertInt
+        //-------------------------------------------------------------------------------------
     /**
      * insertInt is a function that inserts the specified Integer value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -802,8 +804,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.3.1 insertBoolean
-    //-------------------------------------------------------------------------------------
+            //  --> 3.3.1 insertBoolean
+        //-------------------------------------------------------------------------------------
     /**
      * insertBoolean is a function that inserts the specified Boolean value into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -816,8 +818,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.3.2 insertBoolean
-    //-------------------------------------------------------------------------------------
+            //  --> 3.3.2 insertBoolean
+        //-------------------------------------------------------------------------------------
     /**
      * insertBoolean is a function that inserts the specified Boolean value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -851,8 +853,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.4.1 insertFloat
-    //-------------------------------------------------------------------------------------
+            //  --> 3.4.1 insertFloat
+        //-------------------------------------------------------------------------------------
     /**
      * insertFloat is a function that inserts the specified Float value into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -865,8 +867,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.4.2 insertFloat
-    //-------------------------------------------------------------------------------------
+            //  --> 3.4.2 insertFloat
+        //-------------------------------------------------------------------------------------
     /**
      * insertFloat is a function that inserts the specified Float value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -900,8 +902,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.5.1 insertReal
-    //-------------------------------------------------------------------------------------
+            //  --> 3.5.1 insertReal
+        //-------------------------------------------------------------------------------------
     /**
      * insertReal is a function that inserts the specified Real value into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -914,8 +916,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.5.2 insertReal
-    //-------------------------------------------------------------------------------------
+            //  --> 3.5.2 insertReal
+        //-------------------------------------------------------------------------------------
     /**
      * insertReal is a function that inserts the specified Real value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -949,9 +951,9 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.6.1 insertImage
+            //  --> 3.6.1 insertImage
     //** --> i think this needs to change to accept image Objects (as a binary string that is) **
-    //-------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
     /**
      * insertImage is a function that inserts the specified image into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -964,8 +966,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.6.2 insertImage
-    //-------------------------------------------------------------------------------------
+            //  --> 3.6.2 insertImage
+        //-------------------------------------------------------------------------------------
     /**
      * insertImage is a function that inserts the specified image into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -999,8 +1001,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.7.1 insertDate
-    //-------------------------------------------------------------------------------------
+            //  --> 3.7.1 insertDate
+        //-------------------------------------------------------------------------------------
     /**
      * insertDate is a function that inserts the specified Date into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -1013,8 +1015,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.7.2 insertDate
-    //-------------------------------------------------------------------------------------
+            //  --> 3.7.2 insertDate
+        //-------------------------------------------------------------------------------------
     /**
      * insertDate is a function that inserts the specified Date into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -1050,8 +1052,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.8.1 insertDateTime
-    //-------------------------------------------------------------------------------------
+            //  --> 3.8.1 insertDateTime
+        //-------------------------------------------------------------------------------------
     /**
      * insertDateTime is a function that inserts the specified datetime into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -1064,8 +1066,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.8.2 insertDateTime
-    //-------------------------------------------------------------------------------------
+            //  --> 3.8.2 insertDateTime
+        //-------------------------------------------------------------------------------------
     /**
      * insertDateTime is a function that inserts the specified datetime into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -1099,8 +1101,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.9.1 insertBlob
-    //-------------------------------------------------------------------------------------
+            //  --> 3.9.1 insertBlob
+        //-------------------------------------------------------------------------------------
     /**
      * insertBlob is a function that inserts the specified Blob value into the specified column
      * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
@@ -1113,8 +1115,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.9.2 insertBlob
-    //-------------------------------------------------------------------------------------
+            //  --> 3.9.2 insertBlob
+        //-------------------------------------------------------------------------------------
     /**
      * insertBlob is a function that inserts the specified Blob value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -1198,9 +1200,9 @@ public class JavaSqlCommunication {
 */
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 3.11.2 insert  ---> inserts any value ito any column,  it must be able to get the datatype for the column????? does it ???
+            //  --> 3.11.2 insert  ---> inserts any value ito any column,  it must be able to get the datatype for the column????? does it ???
     //  **  i have to finnish this later ---> come back and update **
-    //-------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
     /**
      * insert is a function that inserts the specified value into the specified column
      * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
@@ -1247,7 +1249,7 @@ public class JavaSqlCommunication {
     // Methods: Part 4 : JavaSqlCommunication  --> Update, where  <-- operations
     //---------------------------------------------------------------------------------------------------------------------
 
-    //  --> 4.0 update
+        //  --> 4.0 update
     //-------------------------------------------------------------------------------------
     /**
      * update is a function that Updates all rows in the specified column with the specified value, --> (A) where the specified condition is true
@@ -1283,8 +1285,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.1.1 updateText
-    //-------------------------------------------------------------------------------------
+            //  --> 4.1.1 updateText
+        //-------------------------------------------------------------------------------------
     /**
      * updateText is a function that Updates all rows in the specified column with the specified text, --> (A) where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1319,8 +1321,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.2.1 updateInt
-    //-------------------------------------------------------------------------------------
+            //  --> 4.2.1 updateInt
+        //-------------------------------------------------------------------------------------
     /**
      * updateInt is a function that Updates all rows in the specified column with the specified integer, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1355,8 +1357,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.3.1 updateBoolean
-    //-------------------------------------------------------------------------------------
+            //  --> 4.3.1 updateBoolean
+        //-------------------------------------------------------------------------------------
     /**
      * updateBoolean is a function that Updates all rows in the specified column with the specified Boolean value, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1391,8 +1393,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.4.1 updateFloat
-    //-------------------------------------------------------------------------------------
+            //  --> 4.4.1 updateFloat
+        //-------------------------------------------------------------------------------------
     /**
      * updateFloat is a function that Updates all rows in the specified column with the specified Float value, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1427,8 +1429,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.5.1 updateReal
-    //-------------------------------------------------------------------------------------
+            //  --> 4.5.1 updateReal
+        //-------------------------------------------------------------------------------------
     /**
      * updateReal is a function that Updates all rows in the specified column with the specified Real value, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1463,9 +1465,9 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.6.1 updateImage
+            //  --> 4.6.1 updateImage
     // --> work to be done
-    //-------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
     /**
      * updateImage is a function that Updates all rows in the specified column with the specified Image, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1500,8 +1502,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.7.1 updateDate
-    //-------------------------------------------------------------------------------------
+            //  --> 4.7.1 updateDate
+        //-------------------------------------------------------------------------------------
     /**
      * updateDate is a function that Updates all rows in the specified column with the specified Date, --> (A) ONly where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1536,8 +1538,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.8.1 updateDateTime
-    //-------------------------------------------------------------------------------------
+            //  --> 4.8.1 updateDateTime
+        //-------------------------------------------------------------------------------------
     /**
      * updateDateTime is a function that Updates all rows in the specified column with the specified datetime value, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1572,8 +1574,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 4.9.1 updateBlob
-    //-------------------------------------------------------------------------------------
+            //  --> 4.9.1 updateBlob
+        //-------------------------------------------------------------------------------------
     /**
      * updateBlob is a function that Updates all rows in the specified column with the specified Blob, --> (A) ONLY where the specified condition is true
      * :: --> ::NOTE 0: This method allows the user to specify the table where the update should occur in
@@ -1656,7 +1658,7 @@ public class JavaSqlCommunication {
     // Methods: Part 5 : JavaSqlCommunication  --> Select  <-- operations, returns the datatype that asked for or object if requested a full row of data
     //---------------------------------------------------------------------------------------------------------------------
 
-    //  --> 5.1.1 selectText
+        //  --> 5.1.1 selectText
     //-------------------------------------------------------------------------------------
     /**
      * selectText is a function that returns a single row of text from the database, based specific table specified by current JavaSqlCommunication instance
@@ -1670,8 +1672,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.1.2 selectText
-    //-------------------------------------------------------------------------------------
+            //  --> 5.1.2 selectText
+        //-------------------------------------------------------------------------------------
     /**
      * selectText is a function that returns a single row of text from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the text should be obtained from
@@ -1715,8 +1717,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.2.1 selectInt
-    //-------------------------------------------------------------------------------------
+            //  --> 5.2.1 selectInt
+        //-------------------------------------------------------------------------------------
     /**
      * selectInt is a function that returns a single integer value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -1729,8 +1731,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.2.2 selectInt
-    //-------------------------------------------------------------------------------------
+            //  --> 5.2.2 selectInt
+        //-------------------------------------------------------------------------------------
     /**
      * selectInt is a function that returns a single integer value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -1771,8 +1773,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.3.1 selectBoolean
-    //-------------------------------------------------------------------------------------
+            //  --> 5.3.1 selectBoolean
+        //-------------------------------------------------------------------------------------
     /**
      * selectBoolean is a function that returns a single boolean value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -1785,8 +1787,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.3.2 updateInt
-    //-------------------------------------------------------------------------------------
+            //  --> 5.3.2 updateInt
+        //-------------------------------------------------------------------------------------
     /**
      * selectBoolean is a function that returns a single boolean value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -1827,8 +1829,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.4.1 selectFloat
-    //-------------------------------------------------------------------------------------
+            //  --> 5.4.1 selectFloat
+        //-------------------------------------------------------------------------------------
     /**
      * selectFloat is a function that returns a single Float value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -1841,8 +1843,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.4.2 selectFloat
-    //-------------------------------------------------------------------------------------
+            //  --> 5.4.2 selectFloat
+        //-------------------------------------------------------------------------------------
     /**
      * selectFloat is a function that returns a single Float value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -1883,8 +1885,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.5.1 selectReal
-    //-------------------------------------------------------------------------------------
+            //  --> 5.5.1 selectReal
+        //-------------------------------------------------------------------------------------
     /**
      * selectReal is a function that returns a single Real value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -1897,8 +1899,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.5.2 selectReal
-    //-------------------------------------------------------------------------------------
+            //  --> 5.5.2 selectReal
+        //-------------------------------------------------------------------------------------
     /**
      * selectReal is a function that returns a single Real value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -1940,9 +1942,9 @@ public class JavaSqlCommunication {
 
     /////////************
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.6.1 selectImage
+            //  --> 5.6.1 selectImage
     // ??????????? DO THIS / rework this!!!!!
-    //-------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
     /**
      * selectImage is a function that returns a single Image value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -1955,8 +1957,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.6.2 selectImage
-    //-------------------------------------------------------------------------------------
+            //  --> 5.6.2 selectImage
+        //-------------------------------------------------------------------------------------
     /**
      * selectImage is a function that returns a single Image value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -1997,8 +1999,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.7.1  selectDate
-    //-------------------------------------------------------------------------------------
+            //  --> 5.7.1  selectDate
+        //-------------------------------------------------------------------------------------
     /**
      * selectDate is a function that returns a single Date value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -2011,8 +2013,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.7.2 selectDate
-    //-------------------------------------------------------------------------------------
+            //  --> 5.7.2 selectDate
+        //-------------------------------------------------------------------------------------
     /**
      * selectDate is a function that returns a single Date value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -2053,8 +2055,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.8.1 selectDateTime
-    //-------------------------------------------------------------------------------------
+            //  --> 5.8.1 selectDateTime
+        //-------------------------------------------------------------------------------------
     /**
      * selectDateTime is a function that returns a single DateTime value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -2067,8 +2069,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.8.2 selectDateTime
-    //-------------------------------------------------------------------------------------
+            //  --> 5.8.2 selectDateTime
+        //-------------------------------------------------------------------------------------
     /**
      * selectDateTime is a function that returns a single DateTime value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -2109,8 +2111,8 @@ public class JavaSqlCommunication {
 
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.9.1 selectBlob
-    //-------------------------------------------------------------------------------------
+            //  --> 5.9.1 selectBlob
+        //-------------------------------------------------------------------------------------
     /**
      * selectBlob is a function that returns a single Blob value from the database, based specific table specified by current JavaSqlCommunication instance
      * @param column_name The Column-name from where the value is selected
@@ -2123,8 +2125,8 @@ public class JavaSqlCommunication {
     }
 
     //-----------------------------------------------------------------------------------------------------------------
-    //  --> 5.9.2 selectBlob
-    //-------------------------------------------------------------------------------------
+            //  --> 5.9.2 selectBlob
+        //-------------------------------------------------------------------------------------
     /**
      * selectBlob is a function that returns a single Blob value from the database specified by current JavaSqlCommunication instance,
      * NOTE: This method allows the user to specify the table where the value should be obtained from
@@ -2230,7 +2232,8 @@ public class JavaSqlCommunication {
     //---------------------------------------------------------------------------------------------------------------------
     // Methods: Part 7 : JavaSqlCommunication  --> useful functions  <-- operations
     //---------------------------------------------------------------------------------------------------------------------
-    //  --> 7.1.1 addText
+
+        //  --> 7.1.1 addText
     //-------------------------------------------------------------------------------------
     /**
      * addText is a function that adds tet to an existing entry of text contianedd in a  in the specified column with the specified value, --> (A) where the specified condition is true
