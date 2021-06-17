@@ -114,7 +114,7 @@ public class JavaSqlCommunication {
         StringBuilder sb = new StringBuilder();
         sb.append("url = "+ url +"\n");
         sb.append("username = "+ userName +"\n");
-        sb.append("password = "+ password +"\n");
+        //sb.append("password = "+ password +"\n");  // turned off due too security concerns
         sb.append("databaseName = "+ databaseName +"\n");
         sb.append("tableName = "+ tableName +"\n");
         //sb.append("Create = "+ create +"\n");
@@ -144,22 +144,7 @@ public class JavaSqlCommunication {
      * @return Returns the Connection object with a connection to the database specified in the respective JavaSqlCommunication Instance
      */
     public Connection getConnection() {
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(this.url+"/?user="+userName+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&dbname="+databaseName,
-                    this.userName+"", this.password+"");
-            Statement stmt = conn.createStatement();
-            stmt.executeQuery("USE " + this.databaseName);
-            stmt.close();
-            System.out.println("Connection Successful");
-
-
-        } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        return conn;
+        return getConnection(this.databaseName+"");
     }
 
     //-----------------------------------------------------------------------------------------------------------------
@@ -172,24 +157,7 @@ public class JavaSqlCommunication {
      * USE TO CONNECT TO A DIFFERENT TABLE FROM THE ONE ENTERED WHEN CONSTRUCTING THE RESPECTIVE  INSTANCE of JavaSqlCommunication
      */
     public Connection getConnection(String databasename) throws Exception {
-        if(databasename == null )
-            throw new IllegalArgumentException("JavaSqlCommunication: databasename is null");
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(this.url+"/?user="+userName+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&dbname="+databasename,
-                    this.userName+"", this.password+"");
-            Statement stmt = conn.createStatement();
-            stmt.executeQuery("USE " + databasename);
-            stmt.close();
-            System.out.println("Connection Successful");
-
-
-        }catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        return conn;
+        return getConnection(this.url+"",this.userName+"", this.password+"",databasename+"");
     }
 
     //-----------------------------------------------------------------------------------------------------------------
@@ -252,25 +220,19 @@ public class JavaSqlCommunication {
      * --> by default since a table must have at least one column if no column is specified the column id - with datatype int will be initialized
      */
     public void createTable(String tablename) throws Exception {
-        if(tablename == null )
+        if(tablename == null)
             throw new IllegalArgumentException("JavaSqlCommunication: tablename is null");
-        try {
-            Connection conn = getConnection();
-            PreparedStatement create = conn.prepareStatement("CREATE TABLE "+tablename+"(id int)");
+        try (Connection conn = getConnection();
+             PreparedStatement create = conn.prepareStatement("CREATE TABLE "+tablename+"(id int)")){
             create.execute();
-            create.close();
             System.out.println("Create_table Successfully executed");
-            try {
-                String idset = "\'" + "id"+ "\'";
-                PreparedStatement alter = conn.prepareStatement("ALTER TABLE "+tablename+ " CHANGE COLUMN  id"+ "  id"+" INT(11) NOT NULL AUTO_INCREMENT" + " , ADD PRIMARY KEY ( id );");
+            try(PreparedStatement alter = conn.prepareStatement("ALTER TABLE "+tablename+ " CHANGE COLUMN  id"+ "  id"+" INT(11) NOT NULL AUTO_INCREMENT" + " , ADD PRIMARY KEY ( id );")){
                 alter.executeUpdate();
-                alter.close();
             } catch (SQLException ex) {
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
                 System.out.println("VendorError: " + ex.getErrorCode());
             }
-            conn.close();
         }catch (SQLException ex){
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
