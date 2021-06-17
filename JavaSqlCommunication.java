@@ -698,12 +698,52 @@ public class JavaSqlCommunication {
             --possible ideas:
                 A.  (function called connected(" the functions for each data type are passes in "),
                 B.  or a fucntion insertline() which has overloaded functin calls to callow 1-10 entries in the same line
-        2. A single insert function for any data type
+
+        2. A single insert function for any data type ---> NOT COMPLETE
+
         3. edit functions to allow each function to accept its datatype not a string onlu
      */
 
 
 
+
+
+   /*     //  --> 3.0 insert  ---> inserts any value ito any column,  it must be able to get the datatype for the column????? does it ???
+
+    //  **  i have to finnish this later ---> come back and update **
+
+    //-------------------------------------------------------------------------------------
+    *//**
+     * insert is a function that inserts the specified value into the specified column
+     * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
+     * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
+     * --> Note 2: This method will create a new row, and will not update/add the value to an existing row, for that to occur the user must use the update method/function
+     * @param value1 The Value to be entered into the column
+     * @param column1name The Column-name where the value will be inserted
+     * @param tablename The name of the Table where the value will be inserted
+     *//*
+    public void insert(String value1, String column1name, String tablename) throws Exception{
+        if(tablename==null)
+            throw new IllegalStateException("insert: Currently the tablename is null, so insert has no location to send the insert");
+        if(column1name ==null)
+            throw new IllegalStateException("insert: columnname is null");
+        if(value1 ==null)
+            throw new IllegalStateException("insert: value1 is null");
+        String var1 =   "\'" + value1+ "\'" ;
+        try (Connection conn = getConnection(this.databaseName+"");
+             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +column1name+ ") " + "VALUES" +"("+var1+")")
+        ){
+            posted.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+    }*/
+
+
+
+    //-----------------------------------------------------------------------------------------------------------------
         //  --> 3.1.1 insertText
     //-------------------------------------------------------------------------------------
     /**
@@ -736,13 +776,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertText: columnname is null");
         if(text ==null)
             throw new IllegalStateException("insertText: text is null");
+
         String var1 =   "\'" + text+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -787,13 +826,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertInt: columnname is null");
         if(integer ==null)
             throw new IllegalStateException("insertInt: integer is null");
+
         String var1 =   "\'" + integer+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -836,13 +874,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertBoolean: columnname is null");
         if(bool ==null)
             throw new IllegalStateException("insertBoolean: bool is null");
+
         //String var1 =   "\'" + bool+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+bool+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+bool+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -885,13 +922,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertFloat: columnname is null");
         if(flt ==null)
             throw new IllegalStateException("insertFloat: flt is null");
+
         String var1 =   "\'" + flt+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -934,13 +970,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertReal: columnname is null");
         if(real ==null)
             throw new IllegalStateException("insertReal: real is null");
+
         String var1 =   "\'" + real+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try (Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -984,13 +1019,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertImage: columnname is null");
         if(imageUrl ==null)
             throw new IllegalStateException("insertImage: imageUrl is null");
+
         String var1 =   "\'" + imageUrl+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try (Connection conn = getConnection(this.databaseName+"");
+             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1033,13 +1067,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertDate: columnname is null");
         if(date ==null)
             throw new IllegalStateException("insertDate: date is null");
+
         String var1 =   "\'" + date+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1084,13 +1117,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertDateTime: columnname is null");
         if(datetime ==null)
             throw new IllegalStateException("insertDateTime: datetime is null");
+
         String var1 =   "\'" + datetime+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1133,13 +1165,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertBlob: columnname is null");
         if(blob ==null)
             throw new IllegalStateException("insertBlob: blob is null");
+
         String var1 =   "\'" + blob+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+        try ( Connection conn = getConnection(this.databaseName+"");
+            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")")
+        ){
             posted.executeUpdate();
-            posted.close();
-            conn.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1185,12 +1216,12 @@ public class JavaSqlCommunication {
             throw new IllegalStateException("insertJSON:: columnname is null");
         if(json ==null)
             throw new IllegalStateException("insertJSON:: json is null");
+
         String var1 =   "\'" + json+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
+        try ( Connection conn = getConnection(this.databaseName+"");
             PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +columnname+ ") " + "VALUES" +"("+var1+")");
+            ){
             posted.executeUpdate();
-            posted.close();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1199,39 +1230,7 @@ public class JavaSqlCommunication {
     }
 */
 
-    //-----------------------------------------------------------------------------------------------------------------
-            //  --> 3.11.2 insert  ---> inserts any value ito any column,  it must be able to get the datatype for the column????? does it ???
-    //  **  i have to finnish this later ---> come back and update **
-        //-------------------------------------------------------------------------------------
-    /**
-     * insert is a function that inserts the specified value into the specified column
-     * :: --> ::NOTE 0: This method allows the user to specify the table where the new column should be created in
-     * --> Note 1: The column must already exist in the table specified by current JavaSqlCommunication instance.
-     * --> Note 2: This method will create a new row, and will not update/add the value to an existing row, for that to occur the user must use the update method/function
-     * @param value1 The Value to be entered into the column
-     * @param column1name The Column-name where the value will be inserted
-     * @param tablename The name of the Table where the value will be inserted
-     */
-    public void insert(String value1, String column1name, String tablename) throws Exception{
-        if(tablename==null)
-            throw new IllegalStateException("insert: Currently the tablename is null, so insert has no location to send the insert");
-        if(column1name ==null)
-            throw new IllegalStateException("insert: columnname is null");
-        if(value1 ==null)
-            throw new IllegalStateException("insert: value1 is null");
-        String var1 =   "\'" + value1+ "\'" ;
-        try {
-            Connection conn = getConnection(this.databaseName+"");
-            PreparedStatement posted = conn.prepareStatement("INSERT INTO " + tablename + "(" +column1name+ ") " + "VALUES" +"("+var1+")");
-            posted.executeUpdate();
-            posted.close();
-            conn.close();
-        } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-    }
+
 
 
 
@@ -1248,6 +1247,18 @@ public class JavaSqlCommunication {
     //---------------------------------------------------------------------------------------------------------------------
     // Methods: Part 4 : JavaSqlCommunication  --> Update, where  <-- operations
     //---------------------------------------------------------------------------------------------------------------------
+
+     /* To Do   -->
+        1. create a method that allows the update of multiple values on a single database line
+            --possible ideas:
+                A.  (function called connected(" the functions for each data type are passes in "),
+                B.  or a fucntion insertline() which has overloaded functin calls to callow 1-10 entries in the same line
+
+ DONE:: 2. A single insert function for any data type
+
+        3. Edit functions to allow each function to accept its datatype not a string onlu
+     */
+
 
         //  --> 4.0 update
     //-------------------------------------------------------------------------------------
@@ -1696,16 +1707,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         String text = null;
-        ResultSet temp = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try ( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             text =temp.getString(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1753,15 +1760,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         Integer integer = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             integer = temp.getInt(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1809,15 +1813,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         Boolean bool = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             bool = temp.getBoolean(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1865,15 +1866,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         Float aFloat = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try ( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             aFloat =temp.getFloat(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1921,15 +1919,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         Double real = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             real =temp.getDouble(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1940,10 +1935,16 @@ public class JavaSqlCommunication {
 
 
 
-    /////////************
+
+    // --> to do  --->
+    // --> to do  --->
+    // --> to do  --->
+    // --> to do  --->
+
     //-----------------------------------------------------------------------------------------------------------------
             //  --> 5.6.1 selectImage
-    // ??????????? DO THIS / rework this!!!!!
+
+    // --> to do  ---> rework this!!!!!
         //-------------------------------------------------------------------------------------
     /**
      * selectImage is a function that returns a single Image value from the database, based specific table specified by current JavaSqlCommunication instance
@@ -1979,15 +1980,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         String image = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try ( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             image =temp.getString(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -1995,6 +1993,8 @@ public class JavaSqlCommunication {
         }
         return image;
     }
+
+
 
 
 
@@ -2035,15 +2035,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         String date = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try ( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             date =temp.getString(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2091,15 +2088,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         String datetime = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             datetime =temp.getString(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2146,15 +2140,12 @@ public class JavaSqlCommunication {
             column_name = "*";
 
         String blob = null;
-        try{
-            Connection con = getConnection(this.databaseName+"");
+        try( Connection con = getConnection(this.databaseName+"");
             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
-            ResultSet temp = posted.executeQuery();
+            ResultSet temp = posted.executeQuery()
+        ){
             temp.next();
             blob =temp.getString(1);
-            temp.close();
-            posted.close();
-            con.close();
         }catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -2254,27 +2245,32 @@ public class JavaSqlCommunication {
             throw new IllegalStateException(" update: tablename is null");
         if(whereCondition == null)
             throw new IllegalStateException(" update: whereCondition is null");
-        try{
+
+        StringBuilder text = new StringBuilder();
+        try(
             // part 1 --> get the value already in the box/location and add the new addition to the end
-            StringBuilder text = new StringBuilder();
-            ResultSet temp = null;
             Connection con = getConnection(this.databaseName+"");
             PreparedStatement get = con.prepareStatement("SELECT " + column_Name + " FROM " + tablename + " WHERE " + whereCondition);
-            temp = get.executeQuery();
+            ResultSet temp = get.executeQuery()
+        ){
             temp.next();
             text.append(temp.getString(1));
-            get.close();
-            temp.close();
             text.append(", " + input_value);
+            String var1 =   "\'" + text.toString()+ "\'" ;
 
             // part 2 --> update the var/box
-            String var1 =   "\'" + text.toString()+ "\'" ;
+            try(
             PreparedStatement posted = con.prepareStatement("UPDATE " + tablename + " SET " + column_Name + " = " + var1  +" WHERE " + whereCondition);
-            posted.executeUpdate();
-            posted.close();
-
-            con.close();
-        }catch (SQLException ex) {
+            ){
+                posted.executeUpdate();
+            }
+            catch (SQLException ex) {
+                System.out.println("SQLException: " + ex.getMessage());
+                System.out.println("SQLState: " + ex.getSQLState());
+                System.out.println("VendorError: " + ex.getErrorCode());
+            }
+        }
+        catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
