@@ -38,7 +38,10 @@ each time you carry out a create, select, insert, update, or delete SQL command,
 ### A. You will need to download the three pieces of this puzzle
 1.  MySQL: the database software --> [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
 2.  A MySQL workbench: to interact with the database --> [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
-3.  A oracle created Java-SQL communication package: to allow java to talk to MySql [Connector/J](https://dev.mysql.com/downloads/connector/j/)
+3.  A Oracle created Java-SQL communication package: to allow java to talk to MySql [Connector/J](https://dev.mysql.com/downloads/connector/j/)
+4.  You need to add the ""mysql-connector-java... .jar file"" to the workspce by:
+> File -> project structure -> modules -> dependancies (instead of sources or paths) -> Click the plus sign ->  locate the mysql-connector-java... .jar file -> press apply/ok 
+> then add it to the Jave class path 
 
 > a good video that walks though this process (steps 1 & 2) is [MySQL Tutorial for Beginners](https://www.youtube.com/watch?v=7S_tz1z_5bA&t=290s)
 
@@ -46,7 +49,8 @@ each time you carry out a create, select, insert, update, or delete SQL command,
  1. In order to be able to use this Java Sql Communication Package, You must place into your project folder 
   - (1) the **JavaSqlCommunication.java** Package/file and 
   - (2) the .jar file (*my version is called **mysql-connector-java-8.0.25.jar***) that can be found in the Connector/J file you downloaded from the oracle site. 
- 2. You must obtain the proper **URL** for your database. It will be in the form of **jdbc:mysql://127.0.0.1:3306/?user=*username*** 
+ 2. You must obtain the **proper** **URL** for your database.  
+ > It will be in the form of **jdbc:mysql://127.0.0.1:3306/?user=*username*** 
 > For MySQL this can usually found by right clicking the database icon (button) underneath the **MySQL Connections(+)** line in my SQL and selecting **copy JDBC connection string to clipboard**
  3. You must obtain the proper **User Name** for your database. 
 > For MySQL this is next to the person icon by the database icon (button) underneath the **MySQL Connections(+)** 
