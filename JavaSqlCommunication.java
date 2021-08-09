@@ -2277,6 +2277,63 @@ public class JavaSqlCommunication {
         }
     }
 
+    
+    //-----------------------------------------------------------------------------------------------------------------
+    //  --> 7.2.1 isLocationEmpty
+    //-------------------------------------------------------------------------------------
+    /**
+     * isLocationEmpty is a function that returns a boolean value, with regard to weather a database location (row,col) is empty.
+     * @param column_name The Column-name from where the value is selected
+     * @param whereCondition The Condition that must be met for the select to occur in a specific row
+     * @return Returns a Boolean Value
+     */
+    public boolean isLocationEmpty(String column_name, String whereCondition ) throws Exception
+    {
+        return isLocationEmpty(column_name, whereCondition, this.tableName);
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------
+    //  --> 7.2.2 isLocationEmpty
+    //-------------------------------------------------------------------------------------
+    /**
+     * isLocationEmpty is a function that returns a boolean value, with regard to weather a database location (row,col) is empty.
+     * NOTE: This method allows the user to specify the table where the value should be obtained from
+     * @param column_name The Column-name from where the value is selected
+     * @param table_name The name of the Table from where the value is selected
+     * @param whereCondition The Condition that must be met for the select to occur in a specific row
+     * @return Returns a Boolean Value
+     */
+    public boolean isLocationEmpty(String column_name, String whereCondition, String table_name ) throws Exception {
+        if(column_name == null)
+            throw new IllegalStateException("isLocationEmpty: column_name is null");
+        if(whereCondition == null)
+            throw new IllegalStateException("isLocationEmpty: whereCondition is null");
+        if(table_name == null)
+            throw new IllegalStateException("isLocationEmpty: table_name is null");
+        if(column_name.compareToIgnoreCase("all") == 0 )
+            column_name = "*";
+
+        String blob = null;
+        try( Connection con = getConnection(this.databaseName+"");
+             PreparedStatement posted = con.prepareStatement("SELECT " + column_name + " FROM " + table_name + " WHERE " + whereCondition);
+             ResultSet temp = posted.executeQuery()
+        ){
+            //System.out.println(temp.toString());
+            temp.next();
+            //System.out.println(temp.getString(1));
+
+            if(temp.getString(1)!=null)
+                return false;
+            else
+                return true;
+        }catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            return true;
+        }
+    }
+
 
 
 
